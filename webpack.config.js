@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
@@ -75,5 +76,14 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
     }),
+    new SVGSpritemapPlugin("src/images/icons/*.svg", {
+      output: {
+        svgo: {
+          plugins: [{ name: "convertColors", params: { currentColor: true } }],
+        },
+        filename: "./src/images/icons/sprite.svg",
+      },
+    }),
+    ,
   ],
 };

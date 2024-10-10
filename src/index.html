@@ -16,21 +16,271 @@
     <main>
       <div class="pagecrm__container">
         <div class="pagecrm__first-screen-content">
-        <header class="pagecrm__header">
-          <div class="pagecrm__logo">
-            <a href="#"><img src="images/logo.svg" alt="logo" /></a>
+          <header class="pagecrm__header">
+            <div class="pagecrm__logo">
+              <a href="#"><img src="images/logo.svg" alt="logo" /></a>
+            </div>
+            <div class="pagecrm__phone">
+              <a href="tel:+78124095222">8 812 409-52-22</a>
+            </div>
+          </header>
+          <div class="pagecrm__menu-search-wrapper">
+            <div class="pagecrm__menu">
+              <div><img src="images/menu.svg" alt="menu" /></div>
+            </div>
+            <div class="pagecrm__search">
+              <label for="search"></label>
+
+              <div><input type="text" id="search" /> <span></span></div>
+            </div>
           </div>
-          <div class="pagecrm__phone">
-            <a href="tel:+78124095222">8 812 409-52-22</a>
+          <nav class="pagecrm__navigation">
+            <div class="pagecrm__nav-wrapper">
+              <ul class="pagecrm__nav-list">
+                <li class="pagecrm__nav-item"><a href="">Главная</a></li>
+                <li class="pagecrm__nav-item">
+                  <a href="">Услуги Альфа Маркетинг</a>
+                </li>
+                <li class="pagecrm__nav-item"><a href="">CRM</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="pagecrm__leave-request">
+            <div class="pagecrm__leave-request-wrapper">
+              <h2 class="pagecrm__leave-request-title">CRM</h2>
+              <div class="pagecrm__leave-request--img">
+                <img
+                  class="pagecrm__leave-request--background"
+                  src="images/CRM-background.svg"
+                  alt=""
+                />
+                <img
+                  class="pagecrm__leave-request-icon"
+                  src="images/CRM.svg"
+                  alt="CRM"
+                />
+              </div>
+              <div class="pagecrm__leave-request-button-wrapper">
+                <button>Оставить заявку</button>
+              </div>
+            </div>
           </div>
-        </header>
-        <div class="pagecrm__menu-search-wrapper">
-          <div class="pagecrm__menu">
-            <a href="#"><img src="images/menu.svg" alt="menu" /></a>
+        </div>
+
+        <div class="pagecrm__callback-btn">
+          <button class="pagecrm__callback-question">
+            <svg width="13" height="23">
+              <use href="images/icons/sprite.svg#icon-question"></use>
+            </svg>
+          </button>
+          <button class="pagecrm__callback-phone-btn">
+            <svg width="22" height="23">
+              <use href="images/icons/sprite.svg#icon-phone"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="features">
+          <h2 class="features__title">
+            Управление <span>бизнес-процессами</span>
+          </h2>
+          <div class="features__icons">
+            <div class="features__icons-item">
+              <div class="features__icons-item-wrapper">
+                <svg width="90" height="90">
+                  <use href="images/icons/sprite.svg#icon-headphones"></use>
+                </svg>
+                <p>Удобное общение <span>с заказчиками</span></p>
+              </div>
+              <div class="features__icons-item-wrapper">
+                <svg width="100" height="81">
+                  <use href="images/icons/sprite.svg#icon-people"></use>
+                </svg>
+                <p>Лучшие <span>CRM-системы</span></p>
+              </div>
+            </div>
+            <div class="features__icons-item">
+              <div class="features__icons-item-wrapper">
+                <svg width="91" height="90">
+                  <use href="images/icons/sprite.svg#icon-rocket"></use>
+                </svg>
+                <p>
+                  Повышение
+                  <span>эффективности <span>отдела продаж</span></span>
+                </p>
+              </div>
+              <div class="features__icons-item-wrapper">
+                <svg width="74" height="90">
+                  <use href="images/icons/sprite.svg#icon-document"></use>
+                </svg>
+                <p>
+                  Карточка с историей
+                  <span> событий для каждого <span> заказчика</span></span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="pagecrm__search">
-            <label for="search"></label>
-            <input type="text" id="search" />
+          <div class="features__partners">
+            <div class="features__partners-container">
+              <div class="features__partners-item">
+                <div class="features__partners-item-pic">
+                  <img src="images/amoCrm.webp" alt="amoCrm" />
+                </div>
+                <div class="features__partners-text">
+                  <h2 class="features__partners-title">Функции</h2>
+                  <ul class="features__partners-list">
+                    <li class="features__partners-items">CRM</li>
+                    <li class="features__partners-items">
+                      Интеграция с <span>другими </span><span>сервисами</span>
+                    </li>
+                    <li class="features__partners-items">Онлайн-бот</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="features__partners-item">
+                <div class="features__partners-item-pic">
+                  <img src="images/bitrix.webp" alt="bitrix" />
+                </div>
+                <div class="features__partners-text">
+                  <h2 class="features__partners-title">Функции</h2>
+                  <ul class="features__partners-list">
+                    <li class="features__partners-items">CRM</li>
+                    <li class="features__partners-items">
+                      Корпоративный портал
+                    </li>
+                    <li class="features__partners-items">Онлайн офис</li>
+                    <li class="features__partners-items">
+                      Интеграция с <span>другими </span>
+                      <span>сервисами и т.д.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callback-form">
+          <div class="callback-form__wrapper">
+            <div class="callback-form__form">
+              <h2 class="callback-form__form-title">Оставить заявку</h2>
+              <p class="callback-form__form-text">
+                Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
+                течение 20 минут
+              </p>
+              <form action="post">
+                <div class="callback-form__form--last-name">
+                  <label for="last-name"></label>
+                  <input type="text" id="last-name" placeholder="ФИО" />
+                </div>
+                <div class="callback-form__form--phone">
+                  <label for="phone"></label>
+                  <input type="text" id="phone" placeholder="Телефон" />
+                </div>
+                <div class="callback-form__form--select">
+                  <div class="callback-form__form--title" id="title">
+                    Выберите CRM систему
+                  </div>
+                  <div class="callback-form__form--text none" id="1">
+                    amoCRM
+                  </div>
+                  <div class="callback-form__form--text none" id="2">
+                    Битрикс24
+                  </div>
+                  <div class="callback-form__form--text none" id="3">
+                    Нужна помощь в выборе
+                  </div>
+                </div>
+                <div class="callback-form__form--textarea">
+                  <textarea
+                    name="textarea"
+                    id="textarea"
+                    placeholder="Напишите что вас интересует,
+например: Покупка лицензии amoCRM"
+                  ></textarea>
+                </div>
+                <div class="callback-form__form--btn">
+                  <button>Оставить заявку</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="pagecrm__crm-features">
+          <div class="pagecrm__crm-features-wrapper">
+            <h2 class="pagecrm__crm-features-title">КОМУ ПОЛЕЗНА CRM</h2>
+            <div class="pagecrm__crm-features-wrapper-list">
+              <ul class="pagecrm__crm-feature-list">
+                <li class="pagecrm__crm-feature-item">
+                  Любому бизнесу, работающему с клиентской базой
+                </li>
+                <li class="pagecrm__crm-feature-item">
+                  На компьютер, подключите гарнитуру и звоните прямо из CRM
+                  одним кликом
+                </li>
+                <li class="pagecrm__crm-feature-item">
+                  На компьютер, подключите гарнитуру и звоните прямо из CRM
+                  одним кликом
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="pagecrm__crm-bussiness">
+          <div class="pagecrm__crm-bussiness-wrapper">
+            <h2 class="pagecrm__bussiness-head">CRM В БИЗНЕСЕ</h2>
+            <p class="pagecrm__bussiness-text">Наши кейсы</p>
+            <div class="pagecrm__bussiness-cards-wrapper">
+              <div class="pagecrm__bussiness-card-wrapper">
+                <div class="pagecrm__bussiness-card">
+                  <svg
+                    width="274"
+                    height="185"
+                    class="pagecrm__bussiness-card-pic"
+                  >
+                    <use href="images/icons/sprite.svg#bussiness-icon-1"></use>
+                  </svg>
+                  <h3 class="pagecrm__bussiness-card-title">
+                    "Пестовский Лесокомбинат"
+                  </h3>
+                  <p class="pagecrm__bussiness-card-text">
+                    Строительная компания
+                  </p>
+                  <p class="pagecrm__bussiness-card-text--colored">
+                    Работают на платформе amoCRM
+                  </p>
+                  <div class="pagecrm__bussiness-card-btn-wrapper">
+                    <button class="pagecrm__bussiness-card-btn">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="pagecrm__bussiness-card-wrapper">
+                <div class="pagecrm__bussiness-card">
+                  <svg
+                    width="273"
+                    height="185"
+                    class="pagecrm__bussiness-card-pic"
+                  >
+                    <use href="images/icons/sprite.svg#bussiness-icon-2"></use>
+                  </svg>
+                  <h3 class="pagecrm__bussiness-card-title">
+                    Магазин "Mongol Store"
+                  </h3>
+                  <p class="pagecrm__bussiness-card-text">
+                    Одежда из натуральной шерсти
+                  </p>
+                  <p class="pagecrm__bussiness-card-text--colored">
+                    Используют БитриксCRM
+                  </p>
+                  <div class="pagecrm__bussiness-card-btn-wrapper">
+                    <button class="pagecrm__bussiness-card-btn">
+                      Подробнее
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
