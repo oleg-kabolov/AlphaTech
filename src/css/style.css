@@ -794,6 +794,9 @@ h2.features__partners-title {
 }
 
 /*Callback audit*/
+.page__crm-callback-audit {
+  padding-bottom: 75px;
+}
 .page__crm-callback-audit-title {
   font-size: 24px;
   color: #fff;
@@ -815,8 +818,103 @@ h2.features__partners-title {
 }
 .page__crm-callback-audit-wrapper {
   background-image: linear-gradient(#000, #000),
-    linear-gradient(166deg, #ffffff, #d795ff, #7bc2fe);
+    linear-gradient(247deg, #ffffff, #d795ff82, #7bc2fe);
 
   box-shadow: 0 0 8px hsla(0, 0%, 100%, 0.5), 0 0 20px rgba(207, 113, 247, 0.5),
     0 0 12px rgba(106, 13, 173, 0.7);
+}
+.page__crm-callback-audit-form form input {
+  background-image: linear-gradient(#673da6, #673da6),
+    linear-gradient(266deg, #ffffff1f, #d795ff2b, #7bc2fe42);
+}
+.page__crm-callback-audit-form--select {
+  background-image: linear-gradient(#673da6, #673da6),
+    linear-gradient(266deg, #ffffff1f, #d795ff2b, #7bc2fe42);
+}
+.page__crm-callback-audit-form--btn::before {
+  background: linear-gradient(87deg, #383fec, #23ffff);
+}
+.page__crm-callback-audit-inside-form-text {
+  color: #fff;
+}
+.page__crm-callback-audit-inside-form-title {
+  color: #cc94ff;
+}
+.page__crm-callback-audit-form--title::after {
+  right: 11px;
+  top: -1px;
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 15.9987L0 5.33203H20L10 15.9987Z" fill="white"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/***Our partners***/
+.page__crm-our-partners {
+  padding-bottom: 90px;
+}
+.page__crm-our-partners-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.page__crm-our-partners-title span {
+  display: block;
+}
+.pagecrm__our-partners-icon {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 58px;
+}
+.page__crm-our-partners-link {
+  position: relative;
+  border-top: 1px solid #00ffb7;
+  border-bottom: 1px solid #00ffb7;
+  /* background: linear-gradient(transparent, transparent),
+    linear-gradient(87deg, #00ffb7, #d795ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box; */
+}
+.page__crm-our-partners-link-wrapper div:last-child {
+  border-top: transparent;
+}
+.page__crm-our-partners-link a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 15px 9px;
+}
+.page__crm-our-partners-link a::hover {
+  cursor: pointer;
+}
+.page__crm-our-partners-link::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 8px;
+  width: 24px;
+  height: 30px;
+  background-image: url('data:image/svg+xml,<svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.86 6.25L20.79 15M20.79 15L13.86 23.75M20.79 15L2.97 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/** Callback-footer-form **/
+.page__crm-callback-footer-form {
+  position: relative;
+}
+.page__crm-callback-footer-form::before {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 8px;
+  width: 341px;
+  height: 186px;
+  background-image: url('data:image/svg+xml,<svg width="335" height="186" viewBox="0 0 335 186" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 169.5C0 175.101 0 177.901 1.08993 180.04C2.04867 181.922 3.57847 183.451 5.46009 184.41C7.59921 185.5 10.3995 185.5 16 185.5H314.676C323.373 185.5 327.722 185.5 330.315 183.669C332.579 182.07 334.078 179.604 334.455 176.859C334.886 173.713 332.884 169.853 328.879 162.133L272.54 53.5227C268.269 45.2879 266.133 41.1706 263.066 38.0082C260.35 35.2083 257.114 32.9649 253.54 31.4035C249.503 29.64 244.898 29.0837 235.688 27.9712L17.9188 1.6646C11.7234 0.916183 8.62564 0.541977 6.22508 1.52057C4.11708 2.37991 2.36537 3.93275 1.25943 5.92247C0 8.18834 0 11.3086 0 17.5491V169.5Z" fill="url(#paint0_linear_1_1164)" fill-opacity="0.5"/><defs><linearGradient id="paint0_linear_1_1164" x1="170.5" y1="185.5" x2="170.5" y2="-0.5" gradientUnits="userSpaceOnUse"><stop stop-color="#C54AFE"/><stop offset="1" stop-color="#9945FF"/></linearGradient></defs></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

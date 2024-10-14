@@ -359,22 +359,22 @@
             >
               <div class="callback-form__form page__crm-callback-audit-form">
                 <h2
-                  class="callback-form__form-title page__crm-callback-audit-title"
+                  class="callback-form__form-title page__crm-callback-audit-inside-form-title"
                 >
-                  Оставить заявку
+                  Заполните форму
                 </h2>
                 <p
-                  class="callback-form__form-text page__crm-callback-audit-text"
+                  class="callback-form__form-text page__crm-callback-audit-inside-form-text"
                 >
-                  Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
-                  течение 20 минут
+                  Оставьте свои контактные данные, мы свяжемся с Вами в течение
+                  20 минут
                 </p>
                 <form action="post">
                   <div
                     class="callback-form__form--last-name page__crm-callback-audit-form--last-name"
                   >
                     <label for="last-name"></label>
-                    <input type="text" id="last-name" placeholder="ФИО" />
+                    <input type="text" id="last-name" placeholder="Имя" />
                   </div>
                   <div
                     class="callback-form__form--phone page__crm-callback-audit-form--phone"
@@ -410,16 +410,7 @@
                       Нужна помощь в выборе
                     </div>
                   </div>
-                  <div
-                    class="callback-form__form--textarea page__crm-callback-audit-form--textarea"
-                  >
-                    <textarea
-                      name="textarea"
-                      id="textarea"
-                      placeholder="Напишите что вас интересует,
-например: Покупка лицензии amoCRM"
-                    ></textarea>
-                  </div>
+
                   <div
                     class="callback-form__form--btn page__crm-callback-audit-form--btn"
                   >
@@ -427,6 +418,60 @@
                   </div>
                 </form>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__crm-our-partners">
+          <div class="page__crm-our-partners-wrapper">
+            <h2 class="page__crm-our-partners-title">
+              НАШ ПАРТНЁР <span>ПО CRM-СИСТЕМАМ</span>
+            </h2>
+            <svg width="341" height="171" class="pagecrm__our-partners-icon">
+              <use href="images/icons/sprite.svg#our-partners-icon"></use>
+            </svg>
+            <div class="page__crm-our-partners-link-wrapper">
+              <div class="page__crm-our-partners-link">
+                <a href="#">Битрикс24 (Управление бизнесом)</a>
+              </div>
+              <div class="page__crm-our-partners-link">
+                <a href="#">amoCRM (Управление бизнесом)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__crm-callback-footer">
+          <div class="page__crm-callback-footer-wrapper">
+            <h2 class="page__crm-callback-footer-title">
+              Заявка на подбор и подключение CRM-системы
+            </h2>
+            <span class="page__crm-callback-footer-text"
+              >Проведем аудит, подготовим решение для вашего бизнеса и
+              рассчитаем стоимость</span
+            >
+            <div class="page__crm-callback-footer-form">
+              <form action="post">
+                <label for="name" id="name">
+                  <input type="text" id="name" placeholder="Имя*" />
+                </label>
+                <label for="name" id="name">
+                  <input type="text" id="name" placeholder="Почта*" />
+                </label>
+                <label for="name" id="name">
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="+7 (___) ___ - __ - __"
+                  />
+                </label>
+                <textarea
+                  name="textarea"
+                  id="textarea"
+                  placeholder="Задать вопрос"
+                ></textarea>
+                <div class="page__crm-callback-footer-btn">
+                  <button>Задать вопрос</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
