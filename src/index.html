@@ -18,7 +18,9 @@
         <div class="pagecrm__first-screen-content">
           <header class="pagecrm__header">
             <div class="pagecrm__logo">
-              <a href="#"><img src="images/logo.svg" alt="logo" /></a>
+              <a href="#"
+                ><img src="images/logo.svg" alt="Альфа Маркетинг"
+              /></a>
             </div>
             <div class="pagecrm__phone">
               <a href="tel:+78124095222">8 812 409-52-22</a>
@@ -69,12 +71,12 @@
 
         <div class="pagecrm__callback-btn">
           <button class="pagecrm__callback-question">
-            <svg width="13" height="23">
+            <svg class="pagecrm__callback-question-icon" width="13" height="23">
               <use href="images/icons/sprite.svg#icon-question"></use>
             </svg>
           </button>
           <button class="pagecrm__callback-phone-btn">
-            <svg width="22" height="23">
+            <svg class="pagecrm__callback-phone-icon" width="22" height="23">
               <use href="images/icons/sprite.svg#icon-phone"></use>
             </svg>
           </button>
@@ -167,7 +169,7 @@
                 Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
                 течение 20 минут
               </p>
-              <form action="post">
+              <form id="form" action="post">
                 <div class="callback-form__form--last-name">
                   <label for="last-name"></label>
                   <input type="text" id="last-name" placeholder="ФИО" />
@@ -180,14 +182,14 @@
                   <div class="callback-form__form--title" id="title">
                     Выберите CRM систему
                   </div>
-                  <div class="callback-form__form--text none" id="1">
-                    amoCRM
-                  </div>
-                  <div class="callback-form__form--text none" id="2">
-                    Битрикс24
-                  </div>
-                  <div class="callback-form__form--text none" id="3">
-                    Нужна помощь в выборе
+                  <div class="callback-form__dropdown">
+                    <div class="callback-form__form--text" id="1">amoCRM</div>
+                    <div class="callback-form__form--text" id="2">
+                      Битрикс24
+                    </div>
+                    <div class="callback-form__form--text" id="3">
+                      Нужна помощь в выборе
+                    </div>
                   </div>
                 </div>
                 <div class="callback-form__form--textarea">
@@ -199,7 +201,7 @@
                   ></textarea>
                 </div>
                 <div class="callback-form__form--btn">
-                  <button>Оставить заявку</button>
+                  <button type="submit">Оставить заявку</button>
                 </div>
               </form>
             </div>
@@ -369,7 +371,7 @@
                   Оставьте свои контактные данные, мы свяжемся с Вами в течение
                   20 минут
                 </p>
-                <form action="post">
+                <form id="form" action="post">
                   <div
                     class="callback-form__form--last-name page__crm-callback-audit-form--last-name"
                   >
@@ -391,23 +393,14 @@
                     >
                       Выберите CRM систему
                     </div>
-                    <div
-                      class="callback-form__form--text page__crm-callback-audit-form--text none"
-                      id="1"
-                    >
-                      amoCRM
-                    </div>
-                    <div
-                      class="callback-form__form--text page__crm-callback-audit-form--text none"
-                      id="2"
-                    >
-                      Битрикс24
-                    </div>
-                    <div
-                      class="callback-form__form--text page__crm-callback-audit-form--text none"
-                      id="3"
-                    >
-                      Нужна помощь в выборе
+                    <div class="callback-form__dropdown none">
+                      <div class="callback-form__form--text" id="1">amoCRM</div>
+                      <div class="callback-form__form--text" id="2">
+                        Битрикс24
+                      </div>
+                      <div class="callback-form__form--text" id="3">
+                        Нужна помощь в выборе
+                      </div>
                     </div>
                   </div>
 
@@ -439,42 +432,167 @@
             </div>
           </div>
         </div>
-        <div class="page__crm-callback-footer">
-          <div class="page__crm-callback-footer-wrapper">
-            <h2 class="page__crm-callback-footer-title">
-              Заявка на подбор и подключение CRM-системы
-            </h2>
-            <span class="page__crm-callback-footer-text"
-              >Проведем аудит, подготовим решение для вашего бизнеса и
-              рассчитаем стоимость</span
-            >
-            <div class="page__crm-callback-footer-form">
-              <form action="post">
-                <label for="name" id="name">
-                  <input type="text" id="name" placeholder="Имя*" />
-                </label>
-                <label for="name" id="name">
-                  <input type="text" id="name" placeholder="Почта*" />
-                </label>
-                <label for="name" id="name">
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="+7 (___) ___ - __ - __"
-                  />
-                </label>
+        <div class="page__crm-callback-form-before-footer-wrapper">
+          <h2 class="page__crm-callback-form-before-footer-title">
+            Напишите нам!
+          </h2>
+          <span class="page__crm-callback-form-before-footer-text"
+            >Заполните заявку и Мы свяжемся с Вами в течение 15 минут</span
+          >
+          <div class="page__crm-callback-form-before-footer-form--wrapper">
+            <div class="page__crm-callback-form-before-footer-form">
+              <form id="form" action="post">
+                <label for="name" id="name"></label>
+                <input type="text" id="name" placeholder="Имя*" />
+
+                <label for="name" id="name"></label>
+                <input type="text" id="name" placeholder="Почта*" />
+
+                <label for="name" id="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="+7 (___) ___ - __ - __"
+                />
+
                 <textarea
                   name="textarea"
                   id="textarea"
                   placeholder="Задать вопрос"
                 ></textarea>
-                <div class="page__crm-callback-footer-btn">
-                  <button>Задать вопрос</button>
+                <div class="page__crm-callback-form-before-footer-btn">
+                  <button onclick="openModal()" type="submit">
+                    Задать вопрос
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
+        <div class="main-modal-wrapper">
+          <div class="main-modal modal">
+            <div class="modal__wrapper">
+              <div class="close-main-modal-btn">
+                <svg width="24" height="24" class="close-modal-btn-icon">
+                  <use href="images/icons/sprite.svg#close-modal-btn"></use>
+                </svg>
+              </div>
+              <form id="form" class="modal-form" action="post">
+                <h2 class="modal-form__head">Форма для заполнения</h2>
+                <p class="modal-form__below-head">
+                  Оставьте свои контактные данные, и мы свяжемся с Вами в
+                  течение 20 минут
+                </p>
+
+                <input
+                  class="modal-form__name"
+                  type="text"
+                  name="name"
+                  placeholder="Ваш телефон"
+                />
+
+                <input
+                  class="modal-form__email"
+                  type="email"
+                  name="email"
+                  placeholder="@Почта*"
+                />
+                <div class="modal-form__btn-wrapper">
+                  <button class="modal-form__btn" type="submit">
+                    Отправить заявку
+                  </button>
+                </div>
+                <div class="modal-form__policy-wrapper">
+                  <label class="modal-form__policy-input-label">
+                    <input
+                      class="modal-form__checkbox"
+                      type="checkbox"
+                      required
+                    />
+                    <span class="modal-form__checkbox-checkmark"></span>
+                  </label>
+                  <span class="modal-policy"
+                    >Нажимая на кнопку, я соглашаюсь с условиями
+                    <a class="modal-policy--link" href="/policy"
+                      >Политики конфиденциальности</a
+                    ></span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-callback-submitted">
+          <div class="modal-callback-submitted__circle">
+            <svg
+              width="151"
+              height="152"
+              class="icon-modal-submitted-checkmark"
+            >
+              <use
+                href="images/icons/sprite.svg#icon-modal-submitted-checkmark"
+              ></use>
+            </svg>
+          </div>
+          <div class="close-modal-btn">
+            <svg width="24" height="24" class="close-modal-btn-icon">
+              <use href="images/icons/sprite.svg#close-modal-btn"></use>
+            </svg>
+          </div>
+          <h2 class="modal-callback-submitted__text">
+            Ваша заявка успешно отправлена!
+          </h2>
+        </div>
+
+        <footer class="pagecrm__footer">
+          <div class="pagecrm__footer-container">
+            <h2 class="pagecrm__footer-head">Контакты</h2>
+            <address class="pagecrm__footer-address">
+              <p class="pagecrm__footer-address-city">Санкт-Петербург</p>
+              <p class="pagecrm__footer-address-street">
+                Заозёрная 8, к.2, офис 202
+              </p>
+              <p class="pagecrm__footer-address-time">Пн-Пт, 10:00 - 18:00</p>
+              <p class="pagecrm__footer-address-phone">
+                <a href="tel:+78124095222">8 (812) 409-52-22</a>
+              </p>
+              <p class="pagecrm__footer-address-mail">
+                <a href="mailto:info@alpham.pro">info@alpham.pro</a>
+              </p>
+            </address>
+            <div class="pagecrm__footer-yamap">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A05b37b575a81bb890865b1f6cc1b9a4dc16dee3150b3c18f0f83839b81427041&amp;source=constructor"
+                width="500"
+                height="400"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="pagecrm__footer-logo">
+              <img src="images/logo.svg" alt="Альфа Маркетинг" />
+            </div>
+            <div class="pagecrm__footer-socials">
+              <a href="vk.com" target="_blank">
+                <svg width="20" height="16" class="vk-icon">
+                  <use href="images/icons/sprite.svg#vk-icon"></use>
+                </svg>
+              </a>
+              <a href="telegram.com" target="_blank">
+                <svg width="17" height="16" class="telegram-icon">
+                  <use href="images/icons/sprite.svg#telegram-icon"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="pagecrm__footer-copyright">
+              <p class="pagecrm__footer-copyright-text">
+                &copy; 2024 Альфа маркетинг
+              </p>
+              <p class="pagecrm__footer-policy">
+                <a href="/privacy-policy">Политика конфиденциальности</a>
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </main>
     <script src="js/index.js"></script>
