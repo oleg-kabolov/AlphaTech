@@ -1131,7 +1131,7 @@ h2.features__partners-title {
   color: #ffff;
 }
 .main-modal-wrapper {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -1140,8 +1140,14 @@ h2.features__partners-title {
   width: 100%;
   height: 100%;
   z-index: 10;
+  visibility: hidden;
   background-color: #00000052;
 }
+
+.main-modal-wrapper--show {
+  visibility: visible;
+}
+
 .main-modal {
   position: relative;
   width: 340px;
@@ -1154,7 +1160,17 @@ h2.features__partners-title {
   box-shadow: 0 0 8px hsla(0, 0%, 100%, 0.5), 0 0 20px rgba(207, 113, 247, 0.5),
     0 0 12px rgba(106, 13, 173, 0.7);
   margin: 0 auto;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(0%) translateY(10%);
+  transition: visibility 0.2s ease-out 0.2s;
 }
+
+.main-modal-wrapper--show .main-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
 .modal__wrapper {
   background-color: #d6bafa;
   border-radius: 9px;
@@ -1178,6 +1194,7 @@ h2.features__partners-title {
     linear-gradient(90deg, #383fec, #383fec, #23ffff);
   background-origin: border-box;
   border: 1px solid transparent;
+  outline: none;
   border-radius: 8px;
   padding: 18px 0 18px 24px;
   width: 90%;
@@ -1355,4 +1372,23 @@ input.modal-form__checkbox:checked ~ .modal-form__checkbox-checkmark::after {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.tooltip {
+  display: none;
+}
+.tooltip {
+  position: relative;
+  font-size: 12px;
+  color: #ba52b4;
+  margin: 10px 0px;
+  text-align: left;
+}
+.tooltip::before {
+  position: absolute;
+  content: "";
+  background-image: url("../images/icons/tooltip.png");
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
 }

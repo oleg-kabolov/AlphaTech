@@ -1,46 +1,62 @@
+import { sendClientData } from "./api.js";
+import { validateInput } from "./validate.js";
+
 const bodyElement = document.body;
-const modal = document.querySelector(".main-modal-wrapper");
-const modalInputName = document.querySelector(".modal-form__name");
+
+const modalContainer = document.querySelector(".main-modal-wrapper");
+const modalForm = document.querySelector(".modal-form");
+
+const modalInputPhone = document.querySelector(".modal-form__name");
 const modalInputEmail = document.querySelector(".modal-form__email");
-const modalPolicyCheckbox = document.querySelector(".modal-form__checkbox");
-const modalTriggerElem = document.querySelectorAll(".page__crm-tariffs-btn");
+
+const modalTriggerElem = document.querySelectorAll(
+  ".pagecrm__callback-btn--modal"
+);
 const modalCloseBtn = document.querySelector(".close-main-modal-btn svg");
 
 modalTriggerElem.forEach((btn) => {
   btn.addEventListener("click", (event) => {
-    modal.style.display = "flex";
+    modalContainer.classList.add("main-modal-wrapper--show");
     bodyElement.classList.add("no-scroll");
     console.log("modal showed");
   });
 });
 
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
+modalContainer.addEventListener("click", (event) => {
+  if (event.target === modalContainer) {
+    modalContainer.remove.classList("main-modal-wrapper--show");
   }
 });
 
-modalCloseBtn.addEventListener("click", (event) => {
+modalCloseBtn.addEventListener("click", () => {
   console.log("modal closed");
-  modal.style.display = "none";
+  modalContainer.classList.remove("main-modal-wrapper--show");
   bodyElement.classList.remove("no-scroll");
 });
 
-if (modalPolicyCheckbox.checked) {
-  modalInputName.disabled = false;
-  modalInputEmail.disabled = false;
-} else {
-  modalInputName.disabled = true;
-  modalInputEmail.disabled = true;
-}
+modalForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-modalPolicyCheckbox.addEventListener("change", (event) => {
-  if (event.target.checked) {
-    modalInputName.disabled = true;
-    modalInputEmail.disabled = true;
+  const inputData = {
+    email: modalInputEmail.value,
+    phone: modalInputPhone.value,
+    name: "",
+    message: "",
+  };
+
+  if (inputData.email && inputData.phone && validateInput(inputData)) {
+    console.log(inputData);
+    sendClientData(inputData);
+    modalInputPhone.value = "";
+    modalInputEmail.value = "";
+  } else {
+    alert("ошибка");
   }
+  modalContainer.classList.remove("main-modal-wrapper--show");
+  bodyElement.classList.remove("no-scroll");
 });
 
 //https://257d26ade8f53d9d.mokky.dev/clientRequest
-modalInputEmail.style.borderColor = "#c01717";
-modalInputEmail.style.borderColor = "#c01717";
+
+// modalInputEmail.style.borderColor = "#c01717";
+// modalInputEmail.style.borderColor = "#c01717";
