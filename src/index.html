@@ -63,19 +63,25 @@
                 />
               </div>
               <div class="pagecrm__leave-request-button-wrapper">
-                <button>Оставить заявку</button>
+                <button class="pagecrm__callback-btn--modal">
+                  Оставить заявку
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         <div class="pagecrm__callback-btn">
-          <button class="pagecrm__callback-question">
+          <button
+            class="pagecrm__callback-question pagecrm__callback-btn--modal"
+          >
             <svg class="pagecrm__callback-question-icon" width="13" height="23">
               <use href="images/icons/sprite.svg#icon-question"></use>
             </svg>
           </button>
-          <button class="pagecrm__callback-phone-btn">
+          <button
+            class="pagecrm__callback-phone-btn pagecrm__callback-btn--modal"
+          >
             <svg class="pagecrm__callback-phone-icon" width="22" height="23">
               <use href="images/icons/sprite.svg#icon-phone"></use>
             </svg>
@@ -169,14 +175,16 @@
                 Выберите систему для вашего бизнеса, и мы свяжемся с Вами в
                 течение 20 минут
               </p>
-              <form id="form" action="post">
+              <form id="form" action="post" data-form-type="type1">
                 <div class="callback-form__form--last-name">
-                  <label for="last-name"></label>
-                  <input type="text" id="last-name" placeholder="ФИО" />
+                  <label for="name"></label>
+                  <input type="text" id="name" placeholder="ФИО" />
+                  <span class="tooltip"></span>
                 </div>
                 <div class="callback-form__form--phone">
                   <label for="phone"></label>
                   <input type="text" id="phone" placeholder="Телефон" />
+                  <span class="tooltip"></span>
                 </div>
                 <div class="callback-form__form--select">
                   <div class="callback-form__form--title" id="title">
@@ -302,7 +310,11 @@
                   Покупка любого тарифа со скидкой
                 </p>
                 <div class="page__crm-tariffs-btn-wrapper">
-                  <button class="page__crm-tariffs-btn">Заказать</button>
+                  <button
+                    class="page__crm-tariffs-btn pagecrm__callback-btn--modal"
+                  >
+                    Заказать
+                  </button>
                 </div>
               </div>
             </div>
@@ -323,7 +335,11 @@
                   Индивидуальная настройка системы
                 </p>
                 <div class="page__crm-tariffs-btn-wrapper">
-                  <button class="page__crm-tariffs-btn">Заказать</button>
+                  <button
+                    class="page__crm-tariffs-btn pagecrm__callback-btn--modal"
+                  >
+                    Заказать
+                  </button>
                 </div>
               </div>
             </div>
@@ -341,7 +357,11 @@
                   Возможность продления лицензий со скидкой от официальных цен
                 </p>
                 <div class="page__crm-tariffs-btn-wrapper">
-                  <button class="page__crm-tariffs-btn">Заказать</button>
+                  <button
+                    class="page__crm-tariffs-btn pagecrm__callback-btn--modal"
+                  >
+                    Заказать
+                  </button>
                 </div>
               </div>
             </div>
@@ -371,18 +391,20 @@
                   Оставьте свои контактные данные, мы свяжемся с Вами в течение
                   20 минут
                 </p>
-                <form id="form" action="post">
+                <form id="form" action="post" data-form-type="type2">
                   <div
                     class="callback-form__form--last-name page__crm-callback-audit-form--last-name"
                   >
-                    <label for="last-name"></label>
-                    <input type="text" id="last-name" placeholder="Имя" />
+                    <label for="name"></label>
+                    <input type="text" id=name" placeholder="Имя" />
+                    <span class="tooltip"></span>
                   </div>
                   <div
                     class="callback-form__form--phone page__crm-callback-audit-form--phone"
                   >
                     <label for="phone"></label>
                     <input type="text" id="phone" placeholder="Телефон" />
+                    <span class="tooltip"></span>
                   </div>
                   <div
                     class="callback-form__form--select page__crm-callback-audit-form--select"
@@ -441,29 +463,30 @@
           >
           <div class="page__crm-callback-form-before-footer-form--wrapper">
             <div class="page__crm-callback-form-before-footer-form">
-              <form id="form" action="post">
+              <form id="form" action="post" data-form-type="type3">
                 <label for="name" id="name"></label>
                 <input type="text" id="name" placeholder="Имя*" />
+                <span class="tooltip"></span>
 
-                <label for="name" id="name"></label>
-                <input type="text" id="name" placeholder="Почта*" />
+                <label for="email" id="email"></label>
+                <input type="text" id="email" placeholder="Почта*" />
+                <span class="tooltip"></span>
 
-                <label for="name" id="name"></label>
+                <label for="name" id="phone"></label>
                 <input
                   type="text"
-                  id="name"
+                  id="phone"
                   placeholder="+7 (___) ___ - __ - __"
                 />
+                <span class="tooltip"></span>
 
                 <textarea
                   name="textarea"
-                  id="textarea"
+                  id="message"
                   placeholder="Задать вопрос"
                 ></textarea>
                 <div class="page__crm-callback-form-before-footer-btn">
-                  <button onclick="openModal()" type="submit">
-                    Задать вопрос
-                  </button>
+                  <button type="submit">Задать вопрос</button>
                 </div>
               </form>
             </div>
@@ -477,7 +500,12 @@
                   <use href="images/icons/sprite.svg#close-modal-btn"></use>
                 </svg>
               </div>
-              <form id="form" class="modal-form" action="post">
+              <form
+                id="form"
+                class="modal-form"
+                action="post"
+                data-form-type="modal"
+              >
                 <h2 class="modal-form__head">Форма для заполнения</h2>
                 <p class="modal-form__below-head">
                   Оставьте свои контактные данные, и мы свяжемся с Вами в
@@ -487,9 +515,10 @@
                 <input
                   class="modal-form__name"
                   type="text"
-                  name="name"
+                  name="phone"
                   placeholder="Ваш телефон"
                 />
+                <span class="tooltip"></span>
 
                 <input
                   class="modal-form__email"
@@ -497,6 +526,7 @@
                   name="email"
                   placeholder="@Почта*"
                 />
+                <span class="tooltip"></span>
                 <div class="modal-form__btn-wrapper">
                   <button class="modal-form__btn" type="submit">
                     Отправить заявку
