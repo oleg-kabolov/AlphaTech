@@ -1,5 +1,5 @@
 import { sendClientData } from "./api.js";
-import { validateInput } from "./validate.js";
+import { validateInput, validateInputWithEmail } from "./validate.js";
 
 const bodyElement = document.body;
 
@@ -14,11 +14,13 @@ const modalTriggerElem = document.querySelectorAll(
 );
 const modalCloseBtn = document.querySelector(".close-main-modal-btn svg");
 
+const modalSubmittedContainer = document.querySelector(
+  ".main-modal-sub-wrapper"
+);
+
 modalTriggerElem.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     modalContainer.classList.add("main-modal-wrapper--show");
-    bodyElement.classList.add("no-scroll");
-    console.log("modal showed");
   });
 });
 
@@ -29,31 +31,15 @@ modalContainer.addEventListener("click", (event) => {
 });
 
 modalCloseBtn.addEventListener("click", () => {
-  console.log("modal closed");
   modalContainer.classList.remove("main-modal-wrapper--show");
-  bodyElement.classList.remove("no-scroll");
 });
 
 modalForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const inputData = {
-    email: modalInputEmail.value,
-    phone: modalInputPhone.value,
-    name: "",
-    message: "",
-  };
-
-  if (inputData.email && inputData.phone && validateInput(inputData)) {
-    console.log(inputData);
-    sendClientData(inputData);
-    modalInputPhone.value = "";
-    modalInputEmail.value = "";
-  } else {
-    alert("ошибка");
-  }
   modalContainer.classList.remove("main-modal-wrapper--show");
   bodyElement.classList.remove("no-scroll");
+  modalSubmittedContainer.classList.add("main-modal-wrapper--show");
 });
 
 //https://257d26ade8f53d9d.mokky.dev/clientRequest
