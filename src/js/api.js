@@ -9,8 +9,6 @@ async function sendClientData(data) {
     },
     body: JSON.stringify(data),
   });
-  const content = await response.json();
-  console.log(content);
 }
 
 export { sendClientData };

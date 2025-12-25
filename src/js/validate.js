@@ -1,5 +1,10 @@
 clearTooltips();
 
+const emailRegexp =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+const phoneRegexp = /^\+?[1-9]{1,4}?[0-9]{3}?[0-9]{3}?[0-9]{2}?[0-9]{2}$/;
+
 function validateForm(formSelector) {
   const form = document.querySelector(formSelector);
   const formElements = form.elements;
@@ -8,11 +13,6 @@ function validateForm(formSelector) {
   const email = formElements["email"].value;
   const phone = formElements["phone"].value;
   const message = formElements["message"].value;
-
-  const emailRegexp =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  const phoneRegexp = /^\+?[1-9]{1,4}?[0-9]{3}?[0-9]{3}?[0-9]{2}?[0-9]{2}$/;
 
   if (name === "" || email === "" || phone === "" || message === "") {
     alert("Заполните все поля!");
@@ -37,36 +37,44 @@ function validateForm(formSelector) {
   });
 }
 
-function validateInput(inputs) {
+function validateInputWithEmail(inputs) {
   const name = inputs.name;
   const email = inputs.email;
   const phone = inputs.phone;
   const message = inputs.message;
 
-  const emailRegexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
-
-  const phoneRegexp = /^\+?[0-9]{1,3}?[0-9]{3}?[0-9]{3}[0-9]{2}[0-9]{2}$/;
-
-  if (email === "" || phone === "") {
+  if (email !== "" || phone !== "") {
+  } else {
     alert("Заполните поля!");
     return false;
+  }
+
+  if (email && emailRegexp.test(email)) {
+    return true;
   } else {
-    console.log("Запрос отправлен");
-  }
-
-  if (!emailRegexp.test(email)) {
     alert("Введите email корректно в формате _______@mail.com");
-    return false;
   }
 
-  if (!phone && !phoneRegexp.test(phone)) {
-    console.log(phone);
+  if (phone && phoneRegexp.test(phone)) {
+    return true;
+  } else {
     alert(
       "Введите корректный номер телефона используя формат +7 (999) 999-99-99"
     );
-    return false;
   }
-  return true;
+}
+function validateInputWithoutEmail(inputs) {
+  const name = inputs.name;
+  const phone = inputs.phone;
+  const message = inputs.message;
+
+  if (phone && phoneRegexp.test(phone)) {
+    return true;
+  } else {
+    alert(
+      "Введите корректный номер телефона используя формат +7 (999) 999-99-99"
+    );
+  }
 }
 
 function clearTooltips() {
@@ -82,7 +90,7 @@ function showTooltip(input, message) {
   tooltip.textContent = message;
   tooltip.style.display = "block";
 }
-export { validateForm, validateInput };
+export { validateForm, validateInputWithoutEmail, validateInputWithEmail };
 
 // Рекомендации по реализации
 
