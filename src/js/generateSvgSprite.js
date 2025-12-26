@@ -3,7 +3,7 @@ import fs from "fs";
 import { HtmlElement, parse } from "node-html-parser";
 import path from "path";
 
-const svgFiles = globSync("src/images/icons/*.svg");
+const svgFiles = globSync("src/images/icons/sprite.svg");
 const symbols = [];
 
 svgFiles.forEach((file) => {
