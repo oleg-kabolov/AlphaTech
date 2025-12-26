@@ -6,7 +6,7 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
 module.exports = {
-  mode: "development", // Укажите production для финальной сборки
+  mode: "production", // Укажите production для финальной сборки
   entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
@@ -42,11 +42,11 @@ module.exports = {
       },
       // Обработка HTML
       {
-        test: /\.html$/,
+        test: /\.html$/i,
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }, // Минимизация обычно используется для production
+            options: { minimize: true, sources: false }, // Минимизация обычно используется для production
           },
         ],
       },
@@ -86,4 +86,7 @@ module.exports = {
     }),
     ,
   ],
+  optimization: {
+    minimize: true,
+  },
 };
