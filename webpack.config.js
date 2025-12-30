@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
@@ -85,6 +86,13 @@ module.exports = {
       },
     }),
     ,
+    new WebpackShellPluginNext({
+      onBuildStart: {
+        scripts: ["node ./src/js/sprite/generateSvgSprite.js"],
+        blocking: true,
+        parallel: false,
+      },
+    }),
   ],
   optimization: {
     minimize: true,
