@@ -2,11 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
 module.exports = {
-  mode: "development", // Укажите production для финальной сборки
+  mode: "production", // Укажите production для финальной сборки
   entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
@@ -42,11 +43,11 @@ module.exports = {
       },
       // Обработка HTML
       {
-        test: /\.html$/,
+        test: /\.html$/i,
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }, // Минимизация обычно используется для production
+            options: { minimize: true, sources: false }, // Минимизация обычно используется для production
           },
         ],
       },
@@ -85,5 +86,15 @@ module.exports = {
       },
     }),
     ,
+    new WebpackShellPluginNext({
+      onBuildStart: {
+        scripts: ["node ./src/js/sprite/generateSvgSprite.js"],
+        blocking: true,
+        parallel: false,
+      },
+    }),
   ],
+  optimization: {
+    minimize: true,
+  },
 };

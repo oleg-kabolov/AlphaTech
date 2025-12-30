@@ -42,7 +42,4 @@ modalForm.addEventListener("submit", (event) => {
   modalSubmittedContainer.classList.add("main-modal-wrapper--show");
 });
 
-//https://257d26ade8f53d9d.mokky.dev/clientRequest
 
-// modalInputEmail.style.borderColor = "#c01717";
-// modalInputEmail.style.borderColor = "#c01717";

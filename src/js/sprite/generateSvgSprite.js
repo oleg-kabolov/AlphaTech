@@ -1,10 +1,9 @@
 import { globSync } from "glob";
 import fs from "fs";
-import { HtmlElement, parse } from "node-html-parser";
+import { parse } from "node-html-parser";
 import path from "path";
 
-const svgFiles = globSync("src/images/icons/*.svg");
-const symbols = [];
+const svgFiles = globSync("src/images/icons/sprite.svg");
 
 svgFiles.forEach((file) => {
   const code = fs.readFileSync(file, "utf8");
@@ -19,6 +18,4 @@ svgFiles.forEach((file) => {
   if (svgElement.attributes.viewBox) {
     symbolElement.setAttribute("viewBox", svgElement.attributes.viewBox.value);
   }
-
-  symbols.push(symbolElement.outerHTML);
 });
