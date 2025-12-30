@@ -1,6 +1,3 @@
-/// CSS
-import "../css/style.css";
-
 //// JS
 import "./modal.js";
 import "./formHandler.js";
